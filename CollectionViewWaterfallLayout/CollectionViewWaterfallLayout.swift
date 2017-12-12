@@ -306,8 +306,11 @@ open class CollectionViewWaterfallLayout: UICollectionViewLayout {
         }
         
         var contentSize = collectionView?.bounds.size
-        contentSize?.height = CGFloat(columnHeights[0])
-        
+		if let height = columnHeights.first
+		{
+			contentSize?.height = CGFloat(height)
+		}
+		
         return contentSize!
     }
     
